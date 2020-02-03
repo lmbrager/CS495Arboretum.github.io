@@ -1,23 +1,19 @@
-
-<!-- Tab links -->
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-</div>
-
-<!-- Tab content -->
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+<div class="tabcontrol container">
+    <ul class="tabcontrol tabs" style="{{include.headerstyle}}">
+        {% for tab in include.tabs %}
+            <li class="tabcontrol tab {% if {tab[1].active %}active{% endif %}" data-name="{{tab[1].name}}" data-target="tab_{{include.id}}" data-source="{{include.id}}__{{tab[1].source}}">
+                {{tab[1].title}}
+            </li>
+            {% if tab[1].active %}
+                {% assign defaultsource = tab[1].source %}
+            {% endif %}
+            {% if tab[1].content %}
+            <div id="{{include.id}}__{{tab[1].source}}" class="hidden">
+                {{tab[1].content | markdownify }}
+            </div>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div id="tab_{{include.id}}" class="tabcontrol body {{include.bodyclass}}" style="{{include.bodystyle}}" data-defaultsource="{{include.id}}__{{defaultsource}}">
+    </div>
 </div>
