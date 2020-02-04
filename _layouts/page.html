@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-
-<h1>This is a Heading</h1>
-<p>Laney lets just do this because it's way better</p>
-
-</body>
+    <head>
+        <title>Arboretum App - {{ page.title }}</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar prepend-top span-25 append-bottom last">
+                <div class="span-10">
+                </div>
+                <div class="right">
+                    <ul id="nav_buttons" class="round">
+                        {% assign c = ' class = "current_page round"' %}
+                        {% case page.title %}
+                          {% when "Home" %}
+                            {% assign h = c %}
+                          {% when "About" %}
+                            {% assign a = c %}
+                        {% endcase %}
+                        <li{{ h }}><a href="/">home</a></li>
+                        <li{{ a }}><a href="/TeamMembers.html">about</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content span-25 last round">
+              <div class="inner prepend-top span-21 push-2 last">
+                {{ content }}
+              </div>
+            </div>
+        </div>
+    </body>
 </html>
