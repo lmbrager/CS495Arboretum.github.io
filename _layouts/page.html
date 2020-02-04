@@ -14,11 +14,11 @@
                         {% case page.title %}
                           {% when "Home" %}
                             {% assign h = c %}
-                          {% when "About" %}
-                            {% assign a = c %}
+                          {% when "Team" %}
+                            {% assign t = c %}
                         {% endcase %}
                         <li{{ h }}><a href="/index.html">home</a></li>
-                        <li{{ a }}><a href="/TeamMembers.html">about</a></li>
+                        <li{{ t }}><a href="/TeamMembers.html">about</a></li>
                     </ul>
                 </div>
             </div>
