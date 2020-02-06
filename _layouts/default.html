@@ -1,17 +1,13 @@
 <style>
-        margin: 20;
-        font-family: 'Crimson Text', serif;
+        body {
+                margin: 20;
+                font-family: 'Crimson Text', serif;   
+        }    
+        h1 {color: green;}
+        h2 {color: green;}
+        h3 {color: green}
 </style>
 
-div {
-  background-color: lightgrey;
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-}
-
-<div>
 {% include head.html %}
 
 {% include nav.html %}
@@ -21,4 +17,3 @@ div {
     {{ content }}
 
 {% include foot.html %}
-</div>
