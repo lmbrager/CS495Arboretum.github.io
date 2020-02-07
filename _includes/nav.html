@@ -3,9 +3,6 @@
   overflow: hidden;
   background-color: #333;
 }
-.navbar-brand {
-  padding:0;
-}
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -13,6 +10,9 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 32px;
+}
+a.navbar-brand {
+  padding:0;
 }
 .topnav a:hover {
   background-color: #ddd;
@@ -29,4 +29,4 @@
         	<a {% if p.url == page.url %}class="active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
         {% endfor %}
 </div>
-</br>
+<br>
