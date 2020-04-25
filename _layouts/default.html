@@ -1,17 +1,19 @@
 <style>
         body {
                 font-family: 'Crimson Text', serif;   
+                margin: 0px;
         }    
         h1 {color: green;}
         h2 {color: green;}
         h3 {color: green;}
-        p {color: black}
+        p {color: black;
+           margin: 150px;}
 </style>
 
 
 {% include nav.html %}
 
-<body style="margin:150px">
+<body style="margin:0px">
     <h1>{{ page.title }}</h1>
 
     {{ content }}
