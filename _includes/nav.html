@@ -10,9 +10,6 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 32px;
-   position: absolute; 
-            left: 50%; 
-            transform: translatex(-50%); 
 }
 a.navbar-brand {
   padding:0;
@@ -25,11 +22,41 @@ a.navbar-brand {
   background-color: #4CAF50;
   color: white;
 }
+  .navbar-nav.navbar-center { 
+            position: absolute; 
+            left: 50%; 
+            transform: translatex(-50%); 
+        } 
+
 </style>
 
-<div class="topnav" style="padding:0px;font-family:'Lato',sans-serif">
-        {% for p in site.pages %}
-        	<a {% if p.url == page.url %}class="active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
-        {% endfor %}
+  
+  <div class="collapse navbar-collapse" 
+                 id="navbarSupportedContent"> 
+                <ul class=" nav navbar-nav navbar-center"> 
+                    <li class="nav-item active"> 
+                        <a class="nav-link" 
+                           href="#"> 
+                          Home  
+                          <span class="sr-only"> 
+                            (current) 
+                          </span> 
+                      </a> 
+                    </li> 
+                    <li class="nav-item"> 
+                        <a class="nav-link" 
+                           href="#"> 
+                          About 
+                        </a> 
+                    </li> 
+                    <li class="nav-item"> 
+                        <a class="nav-link" 
+                           href="#"> 
+                          About 
+                        </a> 
+                    </li> 
+                </ul> 
+            </div> 
+        </div> 
 </div>
 <br>
